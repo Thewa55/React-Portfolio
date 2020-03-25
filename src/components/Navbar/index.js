@@ -2,25 +2,25 @@ import React from "react";
 import { Link } from "react-router-dom";
 // import "./style.css";
 
-
-{/* <a className="navbar-brand" href="#" style="font-size: 30px; background-color: teal;color:white; padding-left: 20px; padding-right: 20px;">Kin-Wai Lam</a> */}
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Navbar() {
   return(
-    <ul className="nav">
-  <li className="nav-item">
-    <a className="nav-link active" href="#">Active</a>
-  </li>
-  <li className="nav-item">
-    <a className="nav-link" href="#">Link</a>
-  </li>
-  <li className="nav-item">
-    <a className="nav-link" href="#">Link</a>
-  </li>
-  <li className="nav-item">
-    <a className="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-  </li>
-</ul>
+    <nav className="navbar navbar-expand-md navbar-light bg-light" style={{padding: 0}} id="bignav">  
+    <div className="container tc">
+      <Link className="navbar-brand" to="#" >Kin-Wai Lam</Link>
+        <div className="navbar-nav ml-auto">
+          <li className="nav-item">
+            <Link className="nav-link" to="/">About</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="#">Portfolio</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/ContactMe">Contact Me</Link>
+          </li>
+        </div>
+      </div> 
+    </nav>
   );
 }
 
