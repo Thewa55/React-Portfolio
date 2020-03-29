@@ -9,7 +9,7 @@ import Time from '../Time'
 function Header(){
   return(
     <div>
-      <Grid container justify="center">
+      <Grid container justify="center" mt="2rem">
         <Typography variant="h4" component="h2">
           Kin-Wai Lam
         </Typography>

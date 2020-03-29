@@ -18,7 +18,7 @@ class Time extends Component{
     return(
       <Grid container justify="center">
         <Typography variant="body1">
-          Current time: {this.state.date.toLocaleTimeString()}
+          Current time: {this.state.date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
         </Typography>
         {this.timeUpdate()}
       </Grid>
