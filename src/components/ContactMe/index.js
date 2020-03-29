@@ -6,7 +6,7 @@ function ContactMe() {
       <div className="col">
         <br />
         <article className="block">
-          <h1 className="block-header">Contact Me</h1>
+          <h3 className="block-header">Contact Me</h3>
           <hr />              
           <form>
             <div className="form-group">

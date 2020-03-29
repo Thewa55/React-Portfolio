@@ -7,7 +7,7 @@ function Portfolio(){
         <div class="col">
           <br />
             <article class="block">
-              <h1 class="block-header">Portfolio</h1>
+              <h3 class="block-header">Portfolio</h3>
               <hr />              
               <div class="row">
                 <div class="col-md-3">
