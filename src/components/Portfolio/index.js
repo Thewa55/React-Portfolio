@@ -1,6 +1,23 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import API from "../../utils/API"
 
 function Portfolio(){
+
+  const [Portfolio, setPortfolio] = useState([])
+
+  function getPortfolio(){
+    API.getGitHubRepo()
+      .then(res => 
+        setPortfolio(res.data)
+      )
+  }
+
+  useEffect(() => {
+    getPortfolio()
+  })
+
+  console.log(Portfolio)
+  
   return(
     <div>
       <div class="col-md-9">
