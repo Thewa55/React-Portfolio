@@ -34,7 +34,7 @@ function Portfolio(){
                 <div class="col-md-3  offset-md-2">
                   <a href="https://github.com/Thewa55/PasswordGenerator">
                     <img src="assets/images/password.jfif" alt ="" class="ri rr" />
-                    <div class="MI IR">PW Generator</div>
+                    <div class="MI IR">PW Generato</div>
                   </a>
                 </div>
               </div>
