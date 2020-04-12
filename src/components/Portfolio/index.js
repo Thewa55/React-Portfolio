@@ -4,19 +4,30 @@ import API from "../../utils/API"
 function Portfolio(){
 
   const [Portfolio, setPortfolio] = useState([])
+  const [Favorite, setFavorite] = useState([])
+  const Selected = ["Note-Taker", "Tablify", "Google-book-search", "React-Portfolio", "TableManager"]
 
   function getPortfolio(){
+    let fav = []
     API.getGitHubRepo()
-      .then(res => 
+      .then(res => {
         setPortfolio(res.data)
-      )
+        res.data.forEach(repo => {
+          if(Selected.indexOf(repo.name) > -1 ){
+            fav.push(repo)
+            setFavorite(fav)
+          }
+        });
+      })
+      .catch(err => console.log(err))
   }
-
+  
   useEffect(() => {
     getPortfolio()
-  })
+  }, [])
 
-  console.log(Portfolio)
+  console.log (Portfolio)
+  console.log(Favorite)
   
   return(
     <div>
