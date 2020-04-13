@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import API from "../../utils/API"
 import RepoCard from "../RepoCard"
+import Grid from '@material-ui/core/Grid';
 
 function Portfolio(){
   const [selected, setSelected] = useState([])
@@ -37,9 +38,13 @@ function Portfolio(){
         <h1>Work in Progress!!!!</h1>
       </div>
       <div>
-        {selected.map(repo =>(
-          <div key={repo.id}>{repo.name}</div>
-        ))}
+        <Grid container direction="row" justify="center" alignItems="center" spacing={3}>
+          {selected.map(repo =>(
+            <Grid item xs={4}>
+              <RepoCard  repo={repo}/>
+            </Grid>
+          ))}
+        </Grid>
       </div>
     </div> 
   )

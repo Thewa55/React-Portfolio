@@ -7,21 +7,21 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
-});
+// const useStyles = makeStyles({
+//   root: {
+//     maxWidth: 345,
+//   },
+// });
 
-export default function RepoCard() {
-  const classes = useStyles();
+export default function RepoCard(props) {
+//   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Card>
       <CardActionArea>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+            {props.repo.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
