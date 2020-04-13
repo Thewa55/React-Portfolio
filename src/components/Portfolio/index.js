@@ -1,23 +1,25 @@
 import React, {useEffect, useState} from "react";
 import API from "../../utils/API"
+import RepoCard from "../RepoCard"
 
 function Portfolio(){
-
-  const [Portfolio, setPortfolio] = useState([])
-  const [Favorite, setFavorite] = useState([])
-  const Selected = ["Note-Taker", "Tablify", "Google-book-search", "React-Portfolio", "TableManager"]
+  const [selected, setSelected] = useState([])
+  const [portfolio, setPortfolio] = useState([])
+  const [favorite, setFavorite] = useState([])
+  const kennysFav = ["Note-Taker", "Tablify", "Google-book-search", "React-Portfolio", "TableManager"]
 
   function getPortfolio(){
     let fav = []
     API.getGitHubRepo()
       .then(res => {
-        setPortfolio(res.data)
         res.data.forEach(repo => {
-          if(Selected.indexOf(repo.name) > -1 ){
+          if(kennysFav.indexOf(repo.name) > -1 ){
+            console.log(repo.name)
             fav.push(repo)
-            setFavorite(fav)
+            setSelected(fav)
           }
         });
+        setPortfolio(res.data)
       })
       .catch(err => console.log(err))
   }
@@ -25,54 +27,21 @@ function Portfolio(){
   useEffect(() => {
     getPortfolio()
   }, [])
-
-  console.log (Portfolio)
-  console.log(Favorite)
   
+  console.log(portfolio)
+  console.log(selected)
+
   return(
     <div>
-      <div class="col-md-9">
-        <div class="col">
-          <br />
-            <article class="block">
-              <h3 class="block-header">Portfolio</h3>
-              <hr />              
-              <div class="row">
-                <div class="col-md-3">
-                  <a href="https://github.com/Thewa55">
-                    <img src="assets/images/Github.png" alt ="" class="ri" /> 
-                    <div class="MI">My Github</div>
-                  </a>
-                </div>
-                <div class="col-md-3  offset-md-2">
-                  <a href="https://www.linkedin.com/in/kenny-lam-214a1428/">
-                    <img src="assets/images/linkedin.jfif" alt ="" class="ri rr" />
-                    <div class="MI IR">My Linkedin</div>
-                  </a>
-                </div>
-              </div>
-              <br />
-              <div class="row">
-                <div class="col-md-3">
-                  <a href="https://thewa55.github.io/HW-Wireframe.github.io/">
-                    <img src="assets/images/wire.jfif" alt =""  class="ri" /> 
-                    <div class="MI">Wireframe</div>
-                  </a>
-                </div>
-                <div class="col-md-3  offset-md-2">
-                  <a href="https://github.com/Thewa55/PasswordGenerator">
-                    <img src="assets/images/password.jfif" alt ="" class="ri rr" />
-                    <div class="MI IR">PW Generato</div>
-                  </a>
-                </div>
-              </div>
-              <div>
-                 <h1>Work in Progress!!!!</h1> 
-              </div>
-            </article>
-          </div>
-        </div>
-     </div> 
+      <div>
+        <h1>Work in Progress!!!!</h1>
+      </div>
+      <div>
+        {selected.map(repo =>(
+          <div key={repo.id}>{repo.name}</div>
+        ))}
+      </div>
+    </div> 
   )
 }
 
