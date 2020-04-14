@@ -34,9 +34,9 @@ function Portfolio(){
 
   return(
     <div>
-      <div>
-        <h1>Work in Progress!!!!</h1>
-      </div>
+      <Grid container justify="center">
+        <h1>Welcome to my portfolio page</h1>
+      </Grid>
       <div>
         <Grid container direction="row" justify="center" alignItems="center" spacing={3}>
           {selected.map(repo =>(

@@ -6,15 +6,16 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { Link } from "react-router-dom"
 
-// const useStyles = makeStyles({
-//   root: {
-//     maxWidth: 345,
-//   },
-// });
+const useStyles = makeStyles({
+  root: {
+    marginTop: "10px",
+  },
+});
 
 export default function RepoCard(props) {
-//   const classes = useStyles();
+  const classes = useStyles();
 
   return (
     <Card>
@@ -24,18 +25,21 @@ export default function RepoCard(props) {
             {props.repo.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+            {props.repo.description}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
+        <a href={props.repo.html_url} target="_blank">
+          <Button size="small" color="primary">
+            Github Repo
+          </Button>
+        </a>
+        <a href={props.repo.homepage} target="_blank">
+          <Button size="small" color="primary">
+            Deployed Site
+          </Button>
+        </a>
       </CardActions>
     </Card>
   );
