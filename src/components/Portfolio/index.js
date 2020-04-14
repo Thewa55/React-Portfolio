@@ -34,13 +34,13 @@ function Portfolio(){
 
   return(
     <div>
-      <Grid container justify="center">
+      <Grid container justify="center" alignItems="center">
         <h1>Welcome to my portfolio page</h1>
       </Grid>
       <div>
         <Grid container direction="row" justify="center" alignItems="center" spacing={3}>
           {selected.map(repo =>(
-            <Grid item xs={4}>
+            <Grid item xs={12} sm={6} md={4}>
               <RepoCard  repo={repo}/>
             </Grid>
           ))}
