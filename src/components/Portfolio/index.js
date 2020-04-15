@@ -29,12 +29,10 @@ function Portfolio(){
     getPortfolio()
   }, [])
   
-  console.log(portfolio)
-  console.log(selected)
 
   return(
     <div>
-      <Grid container justify="center" alignItems="center">
+      <Grid container justify="center" alignItems="center" >
         <h1>Welcome to my portfolio page</h1>
       </Grid>
       <div>

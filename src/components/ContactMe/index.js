@@ -5,7 +5,8 @@ function ContactMe() {
     <div className="col-md-9">
       <div className="col">
         <br />
-        <article className="block">
+          Kinwai.lam730@gmail.com
+        {/* <article className="block">
           <h3 className="block-header">Contact Me</h3>
           <hr />              
           <form>
@@ -26,7 +27,7 @@ function ContactMe() {
               <button type="submit" className="btn btn-primary">Submit</button>
             </div>
           </form>
-        </article>
+        </article> */}
       </div>
     </div>
   )
