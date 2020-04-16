@@ -6,7 +6,6 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { Link } from "react-router-dom"
 
 const useStyles = makeStyles({
   root: {
@@ -30,12 +29,12 @@ export default function RepoCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <a href={props.repo.html_url} target="_blank">
+        <a href={props.repo.html_url} target="_blank" rel="noopener noreferrer">
           <Button size="small" color="primary">
             Github Repo
           </Button>
         </a>
-        <a href={props.repo.homepage} target="_blank">
+        <a href={props.repo.homepage} target="_blank" rel="noopener noreferrer">
           <Button size="small" color="primary">
             Deployed Site
           </Button>
