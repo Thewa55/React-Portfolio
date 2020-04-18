@@ -6,10 +6,13 @@ function ContactMe() {
       <div className="col">
         Page under construction, please come back soon!
         <br />
-          Kinwai.lam730@gmail.com
+           Email: Kinwai.lam730@gmail.com
           <br />
           <a href="https://www.linkedin.com/in/kin-wai-lam/" target="_blank" rel="noopener noreferrer">
           LinkedIn
+          </a>
+          <a href="https://github.com/Thewa55" target="_blank" rel="noopener noreferrer">
+          Github
           </a>
         {/* <article className="block">
           <h3 className="block-header">Contact Me</h3>
